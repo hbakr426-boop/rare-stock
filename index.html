@@ -102,4 +102,382 @@
         }
         .category {
             color: #777;
-            font-size: 0
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
+        }
+        .product-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            height: 45px;
+        }
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .price {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+        .sizes {
+            font-size: 0.75rem;
+            color: #aaa;
+            background: #222;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .secure-btn {
+            width: 100%;
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .secure-btn:hover {
+            background: #ccc;
+        }
+
+        /* Modal Overlay for Checkout */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+        .modal {
+            background: #141414;
+            border: 1px solid #333;
+            width: 100%;
+            max-width: 450px;
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .modal h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .modal p {
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: #aaa;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            background: #1e1e1e;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 0.95rem;
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #aaa;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .submit-order {
+            width: 100%;
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Rare Stock // 01</div>
+        <div style="font-size: 0.85rem; color: #888; font-weight: 600;">First Wave (M & L Only)</div>
+    </header>
+
+    <section class="hero">
+        <h1>The First Wave</h1>
+        <p>Ultra-limited curation. Premium aesthetics. Cash on Delivery across Egypt.</p>
+    </section>
+
+    <main class="products-section">
+        <div class="product-grid">
+
+            <!-- 1. Argentina Messi -->
+            <div class="product-card">
+                <div class="image-container">
+                    <span class="badge" style="background: #2b6cb0; color: #fff;">Anchor Drop</span>
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80" alt="Argentina Home Messi 10">
+                </div>
+                <div class="product-info">
+                    <div class="category">National / Legend</div>
+                    <h3 class="product-title">Argentina Home (Messi #10)</h3>
+                    <div class="product-meta">
+                        <span class="price">550 EGP</span>
+                        <span class="sizes">Sizes: M / L</span>
+                    </div>
+                    <button class="secure-btn" onclick="openCheckout('Argentina Home (Messi #10)', '550 EGP')">Secure Piece</button>
+                </div>
+            </div>
+
+            <!-- 2. Al Ahly Checkered -->
+            <div class="product-card">
+                <div class="image-container">
+                    <span class="badge" style="background: #c53030; color: #fff;">Local King</span>
+                    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=600&q=80" alt="Al Ahly Special Checkered">
+                </div>
+                <div class="product-info">
+                    <div class="category">Egyptian Giants</div>
+                    <h3 class="product-title">Al Ahly Special Checkered (Haier)</h3>
+                    <div class="product-meta">
+                        <span class="price">550 EGP</span>
+                        <span class="sizes">Sizes: M / L</span>
+                    </div>
+                    <button class="secure-btn" onclick="openCheckout('Al Ahly Special Checkered (Haier)', '550 EGP')">Secure Piece</button>
+                </div>
+            </div>
+
+            <!-- 3. Zamalek Grey/Gold -->
+            <div class="product-card">
+                <div class="image-container">
+                    <span class="badge" style="background: #d69e2e; color: #000;">Luxury Edition</span>
+                    <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=600&q=80" alt="Zamalek Dark Grey Gold">
+                </div>
+                <div class="product-info">
+                    <div class="category">Egyptian Giants</div>
+                    <h3 class="product-title">Zamalek Special Dark Grey/Gold</h3>
+                    <div class="product-meta">
+                        <span class="price">550 EGP</span>
+                        <span class="sizes">Sizes: M / L</span>
+                    </div>
+                    <button class="secure-btn" onclick="openCheckout('Zamalek Special Dark Grey/Gold', '550 EGP')">Secure Piece</button>
+                </div>
+            </div>
+
+            <!-- 4. Egypt Salah -->
+            <div class="product-card">
+                <div class="image-container">
+                    <span class="badge" style="background: #c53030; color: #fff;">National Pride</span>
+                    <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80" alt="Egypt National Kit Salah">
+                </div>
+                <div class="product-info">
+                    <div class="category">National Team</div>
+                    <h3 class="product-title">Egypt National Kit (Salah #10)</h3>
+                    <div class="product-meta">
+                        <span class="price">550 EGP</span>
+                        <span class="sizes">Sizes: M / L</span>
+                    </div>
+                    <button class="secure-btn" onclick="openCheckout('Egypt National Kit (Salah #10)', '550 EGP')">Secure Piece</button>
+                </div>
+            </div>
+
+            <!-- 5. Juventus Zidane -->
+            <div class="product-card">
+                <div class="image-container">
+                    <span class="badge" style="background: #4a5568; color: #fff;">Retro Vault</span>
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80" alt="Juventus Retro Zidane Sony">
+                </div>
+                <div class="product-info">
+                    <div class="category">Legends & Retros</div>
+                    <h3 class="product-title">Juventus Retro (Zidane #21 / Sony)</h3>
+                    <div class="product-meta">
+                        <span class="price">599 EGP</span>
+                        <span class="sizes">Sizes: M / L</span>
+                    </div>
+                    <button class="secure-btn" onclick="openCheckout('Juventus Retro (Zidane #21 / Sony)', '599 EGP')">Secure Piece</button>
+                </div>
+            </div>
+
+            <!-- 6. Brazil Ronaldo -->
+            <div class="product-card">
+                <div class="image-container">
+                    <span class="badge" style="background: #d69e2e; color: #000;">Hype Edition</span>
+                    <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?auto=format&fit=crop&w=600&q=80" alt="Brazil Black Gold Ronaldo">
+                </div>
+                <div class="product-info">
+                    <div class="category">Legends & Retros</div>
+                    <h3 class="product-title">Brazil Black & Gold (Ronaldo #9)</h3>
+                    <div class="product-meta">
+                        <span class="price">599 EGP</span>
+                        <span class="sizes">Sizes: M / L</span>
+                    </div>
+                    <button class="secure-btn" onclick="openCheckout('Brazil Black & Gold (Ronaldo #9)', '599 EGP')">Secure Piece</button>
+                </div>
+            </div>
+
+            <!-- 7. Maradona Argentina -->
+            <div class="product-card">
+                <div class="image-container">
+                    <span class="badge" style="background: #2b6cb0; color: #fff;">Collector's Piece</span>
+                    <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=600&q=80" alt="Maradona Argentina Away">
+                </div>
+                <div class="product-info">
+                    <div class="category">Legends & Retros</div>
+                    <h3 class="product-title">Maradona Argentina Away #10</h3>
+                    <div class="product-meta">
+                        <span class="price">599 EGP</span>
+                        <span class="sizes">Sizes: M / L</span>
+                    </div>
+                    <button class="secure-btn" onclick="openCheckout('Maradona Argentina Away #10', '599 EGP')">Secure Piece</button>
+                </div>
+            </div>
+
+            <!-- 8. Barca x Kobe -->
+            <div class="product-card">
+                <div class="image-container">
+                    <span class="badge" style="background: #553c9a; color: #fff;">Crossover</span>
+                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80" alt="Barca x Kobe Edition">
+                </div>
+                <div class="product-info">
+                    <div class="category">Modern Hype</div>
+                    <h3 class="product-title">FC Barcelona x Kobe Edition</h3>
+                    <div class="product-meta">
+                        <span class="price">550 EGP</span>
+                        <span class="sizes">Sizes: M / L</span>
+                    </div>
+                    <button class="secure-btn" onclick="openCheckout('FC Barcelona x Kobe Edition', '550 EGP')">Secure Piece</button>
+                </div>
+            </div>
+
+            <!-- 9. Man United Retro -->
+            <div class="product-card">
+                <div class="image-container">
+                    <span class="badge" style="background: #1a202c; color: #fff;">Streetwear Flex</span>
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=600&q=80" alt="Man United Black Retro Ronaldo">
+                </div>
+                <div class="product-info">
+                    <div class="category">Legends & Retros</div>
+                    <h3 class="product-title">Man United Black Retro (Ronaldo #7)</h3>
+                    <div class="product-meta">
+                        <span class="price">550 EGP</span>
+                        <span class="sizes">Sizes: M / L</span>
+                    </div>
+                    <button class="secure-btn" onclick="openCheckout('Man United Black Retro (Ronaldo #7)', '550 EGP')">Secure Piece</button>
+                </div>
+            </div>
+
+            <!-- 10. Spain Vintage -->
+            <div class="product-card">
+                <div class="image-container">
+                    <span class="badge" style="background: #e2e8f0; color: #000;">Minimalist</span>
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80" alt="Spain Vintage Off-White Gold">
+                </div>
+                <div class="product-info">
+                    <div class="category">Modern Hype</div>
+                    <h3 class="product-title">Spain Vintage Off-White/Gold</h3>
+                    <div class="product-meta">
+                        <span class="price">550 EGP</span>
+                        <span class="sizes">Sizes: M / L</span>
+                    </div>
+                    <button class="secure-btn" onclick="openCheckout('Spain Vintage Off-White/Gold', '550 EGP')">Secure Piece</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal">
+            <button class="close-modal" onclick="closeCheckout()">&times;</button>
+            <h3>Secure Your Piece</h3>
+            <p id="modalItemTitle">Selected Kit</p>
+            
+            <form id="codForm" onsubmit="submitOrder(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="custName" required placeholder="e.g. Omar Mohamed">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number (Mobile)</label>
+                    <input type="tel" id="custPhone" required placeholder="010XXXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label>Select Size</label>
+                    <select id="custSize" required>
+                        <option value="">Choose Size</option>
+                        <option value="Medium">Medium (M)</option>
+                        <option value="Large">Large (L)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Delivery Address (City & Street)</label>
+                    <input type="text" id="custAddress" required placeholder="e.g. Maadi, Cairo">
+                </div>
+                <button type="submit" class="submit-order">Place Order (Cash on Delivery)</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let selectedProduct = "";
+        let selectedPrice = "";
+
+        function openCheckout(productName, price) {
+            selectedProduct = productName;
+            selectedPrice = price;
+            document.getElementById('modalItemTitle').innerText = productName + " — " + price;
+            document.getElementById('checkoutModal').style.display = 'flex';
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkoutModal').style.display = 'none';
+        }
+
+        function submitOrder(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const size = document.getElementById('custSize').value;
+            const address = document.getElementById('custAddress').value;
+
+            const message = `New Order - Rare Stock!\n\nItem: ${selectedProduct}\nPrice: ${selectedPrice}\nSize: ${size}\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\nPayment: Cash on Delivery`;
+            const encodedMessage = encodeURIComponent(message);
+            
+            const whatsappNumber = "201000000000"; 
+            
+            alert("Order placed successfully! Redirecting to confirmation...");
+            window.location.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        }
+    </script>
+</body>
+</html>
