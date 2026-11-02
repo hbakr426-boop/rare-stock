@@ -3,481 +3,827 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RARE STOCK // Exclusive Football Drops</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <title>RARE STOCK // Luxury Football Kits — Egypt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-primary: #080808;
+            --bg-card: #121212;
+            --bg-elevated: #1a1a1a;
+            --accent-gold: #d4af37;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --border-color: #222222;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
+
         body {
-            background-color: #0b0b0b;
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
+
+        /* Header & Navigation */
         header {
-            border-bottom: 1px solid #1f1f1f;
+            border-bottom: 1px solid var(--border-color);
             padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(11, 11, 11, 0.9);
+            background: rgba(8, 8, 8, 0.9);
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
+
         .logo {
-            font-size: 1.4rem;
-            font-weight: 900;
+            font-size: 1.25rem;
+            font-weight: 800;
             letter-spacing: 3px;
             text-transform: uppercase;
         }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .cart-btn {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .cart-btn:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .cart-count {
+            background: var(--accent-gold);
+            color: #000;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 900;
+        }
+
+        /* Hero Section */
         .hero {
             text-align: center;
-            padding: 80px 20px 40px 20px;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-        .hero p {
-            color: #888;
-            font-size: 1.05rem;
-            letter-spacing: 1px;
-        }
-        .products-section {
-            max-width: 1200px;
+            padding: 70px 20px 40px 20px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px 80px 20px;
         }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Products Grid */
+        .products-section {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 30px 20px 100px 20px;
+        }
+
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
         }
+
         .product-card {
-            background: #141414;
-            border: 1px solid #222;
-            border-radius: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             border-color: #444;
         }
+
         .image-container {
-            background: #1e1e1e;
-            height: 320px;
+            background: var(--bg-elevated);
+            height: 340px;
             position: relative;
             overflow: hidden;
         }
+
         .image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
         }
+
+        .product-card:hover .image-container img {
+            transform: scale(1.05);
+        }
+
         .badge {
             position: absolute;
             top: 12px;
             left: 12px;
-            background: #fff;
-            color: #000;
-            font-size: 0.7rem;
-            font-weight: 800;
-            padding: 5px 10px;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 6px 10px;
             border-radius: 4px;
             text-transform: uppercase;
             letter-spacing: 1px;
             z-index: 2;
         }
+
         .product-info {
             padding: 20px;
         }
+
         .category {
-            color: #777;
-            font-size: 0.75rem;
+            color: var(--accent-gold);
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 5px;
-        }
-        .product-title {
-            font-size: 1.05rem;
             font-weight: 700;
-            margin-bottom: 15px;
-            height: 45px;
+            margin-bottom: 6px;
         }
-        .product-meta {
+
+        .product-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            height: 40px;
+            line-height: 1.3;
+        }
+
+        .product-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
         }
+
         .price {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 800;
         }
-        .sizes {
+
+        .view-details-link {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+        }
+
+        .product-card:hover .view-details-link {
+            color: var(--text-main);
+        }
+
+        /* Slide-out Cart Drawer */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: none;
+            justify-content: flex-end;
+        }
+
+        .cart-drawer {
+            background: var(--bg-card);
+            border-left: 1px solid var(--border-color);
+            width: 100%;
+            max-width: 420px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cart-overlay.active .cart-drawer {
+            transform: translateX(0);
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cart-header h2 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .close-drawer {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            background: var(--bg-elevated);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-item-info h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .cart-item-info p {
             font-size: 0.75rem;
-            color: #aaa;
-            background: #222;
-            padding: 4px 8px;
-            border-radius: 4px;
+            color: var(--text-muted);
+        }
+
+        .cart-item-right {
+            text-align: right;
+        }
+
+        .cart-item-price {
+            font-weight: 800;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #ff5c5c;
+            font-size: 0.75rem;
+            cursor: pointer;
             font-weight: 600;
         }
-        .secure-btn {
+
+        .cart-footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .checkout-trigger-btn {
             width: 100%;
-            background: #fff;
+            background: var(--text-main);
             color: #000;
             border: none;
-            padding: 12px;
+            padding: 15px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.2s ease;
-        }
-        .secure-btn:hover {
-            background: #ccc;
+            transition: background 0.2s;
         }
 
-        /* Modal Overlay for Checkout */
-        .modal-overlay {
+        .checkout-trigger-btn:hover {
+            background: #e2e2e2;
+        }
+
+        /* Modals (Product Details & Detailed Checkout) */
+        .modal-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1100;
             display: none;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
-            backdrop-filter: blur(5px);
+            padding: 20px;
         }
-        .modal {
-            background: #141414;
-            border: 1px solid #333;
+
+        .modal-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             width: 100%;
-            max-width: 450px;
+            max-width: 550px;
+            border-radius: 16px;
             padding: 30px;
-            border-radius: 10px;
             position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
         }
-        .modal h3 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-        .modal p {
-            color: #888;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            color: #aaa;
-        }
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 12px;
-            background: #1e1e1e;
-            border: 1px solid #333;
-            color: #fff;
-            border-radius: 5px;
-            font-size: 0.95rem;
-        }
-        .close-modal {
+
+        .modal-close {
             position: absolute;
             top: 20px;
             right: 20px;
-            background: none;
-            border: none;
-            color: #aaa;
-            font-size: 1.5rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
+            font-size: 1.2rem;
         }
-        .submit-order {
+
+        /* Product Detail Layout */
+        .detail-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .detail-img {
             width: 100%;
-            background: #fff;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+            background: var(--bg-elevated);
+        }
+
+        .detail-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .detail-price {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+        }
+
+        .detail-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .size-selector {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .size-btn {
+            flex: 1;
+            padding: 12px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .size-btn.selected {
+            border-color: var(--accent-gold);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .add-to-cart-action {
+            width: 100%;
+            background: var(--accent-gold);
             color: #000;
             border: none;
-            padding: 14px;
+            padding: 15px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             margin-top: 10px;
+        }
+
+        /* Comprehensive Checkout Form */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .submit-cod-btn {
+            width: 100%;
+            background: var(--accent-gold);
+            color: #000;
+            border: none;
+            padding: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .empty-cart-msg {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 40px 0;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Rare Stock // 01</div>
-        <div style="font-size: 0.85rem; color: #888; font-weight: 600;">First Wave (M & L Only)</div>
+        <div class="logo">Rare Stock // <span>First Wave</span></div>
+        <button class="cart-btn" onclick="toggleCart(true)">
+            Cart <div class="cart-count" id="cartBadge">0</div>
+        </button>
     </header>
 
     <section class="hero">
-        <h1>The First Wave</h1>
-        <p>Ultra-limited curation. Premium aesthetics. Cash on Delivery across Egypt.</p>
+        <h1>Curated Footwear & Kits</h1>
+        <p>Ultra-limited First Wave drop for the Egyptian market. Sizes M & L. Cash on Delivery.</p>
     </section>
 
     <main class="products-section">
-        <div class="product-grid">
-
-            <!-- 1. Argentina Messi -->
-            <div class="product-card">
-                <div class="image-container">
-                    <span class="badge" style="background: #2b6cb0; color: #fff;">Anchor Drop</span>
-                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80" alt="Argentina Home Messi 10">
-                </div>
-                <div class="product-info">
-                    <div class="category">National / Legend</div>
-                    <h3 class="product-title">Argentina Home (Messi #10)</h3>
-                    <div class="product-meta">
-                        <span class="price">550 EGP</span>
-                        <span class="sizes">Sizes: M / L</span>
-                    </div>
-                    <button class="secure-btn" onclick="openCheckout('Argentina Home (Messi #10)', '550 EGP')">Secure Piece</button>
-                </div>
-            </div>
-
-            <!-- 2. Al Ahly Checkered -->
-            <div class="product-card">
-                <div class="image-container">
-                    <span class="badge" style="background: #c53030; color: #fff;">Local King</span>
-                    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=600&q=80" alt="Al Ahly Special Checkered">
-                </div>
-                <div class="product-info">
-                    <div class="category">Egyptian Giants</div>
-                    <h3 class="product-title">Al Ahly Special Checkered (Haier)</h3>
-                    <div class="product-meta">
-                        <span class="price">550 EGP</span>
-                        <span class="sizes">Sizes: M / L</span>
-                    </div>
-                    <button class="secure-btn" onclick="openCheckout('Al Ahly Special Checkered (Haier)', '550 EGP')">Secure Piece</button>
-                </div>
-            </div>
-
-            <!-- 3. Zamalek Grey/Gold -->
-            <div class="product-card">
-                <div class="image-container">
-                    <span class="badge" style="background: #d69e2e; color: #000;">Luxury Edition</span>
-                    <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=600&q=80" alt="Zamalek Dark Grey Gold">
-                </div>
-                <div class="product-info">
-                    <div class="category">Egyptian Giants</div>
-                    <h3 class="product-title">Zamalek Special Dark Grey/Gold</h3>
-                    <div class="product-meta">
-                        <span class="price">550 EGP</span>
-                        <span class="sizes">Sizes: M / L</span>
-                    </div>
-                    <button class="secure-btn" onclick="openCheckout('Zamalek Special Dark Grey/Gold', '550 EGP')">Secure Piece</button>
-                </div>
-            </div>
-
-            <!-- 4. Egypt Salah -->
-            <div class="product-card">
-                <div class="image-container">
-                    <span class="badge" style="background: #c53030; color: #fff;">National Pride</span>
-                    <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80" alt="Egypt National Kit Salah">
-                </div>
-                <div class="product-info">
-                    <div class="category">National Team</div>
-                    <h3 class="product-title">Egypt National Kit (Salah #10)</h3>
-                    <div class="product-meta">
-                        <span class="price">550 EGP</span>
-                        <span class="sizes">Sizes: M / L</span>
-                    </div>
-                    <button class="secure-btn" onclick="openCheckout('Egypt National Kit (Salah #10)', '550 EGP')">Secure Piece</button>
-                </div>
-            </div>
-
-            <!-- 5. Juventus Zidane -->
-            <div class="product-card">
-                <div class="image-container">
-                    <span class="badge" style="background: #4a5568; color: #fff;">Retro Vault</span>
-                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80" alt="Juventus Retro Zidane Sony">
-                </div>
-                <div class="product-info">
-                    <div class="category">Legends & Retros</div>
-                    <h3 class="product-title">Juventus Retro (Zidane #21 / Sony)</h3>
-                    <div class="product-meta">
-                        <span class="price">599 EGP</span>
-                        <span class="sizes">Sizes: M / L</span>
-                    </div>
-                    <button class="secure-btn" onclick="openCheckout('Juventus Retro (Zidane #21 / Sony)', '599 EGP')">Secure Piece</button>
-                </div>
-            </div>
-
-            <!-- 6. Brazil Ronaldo -->
-            <div class="product-card">
-                <div class="image-container">
-                    <span class="badge" style="background: #d69e2e; color: #000;">Hype Edition</span>
-                    <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?auto=format&fit=crop&w=600&q=80" alt="Brazil Black Gold Ronaldo">
-                </div>
-                <div class="product-info">
-                    <div class="category">Legends & Retros</div>
-                    <h3 class="product-title">Brazil Black & Gold (Ronaldo #9)</h3>
-                    <div class="product-meta">
-                        <span class="price">599 EGP</span>
-                        <span class="sizes">Sizes: M / L</span>
-                    </div>
-                    <button class="secure-btn" onclick="openCheckout('Brazil Black & Gold (Ronaldo #9)', '599 EGP')">Secure Piece</button>
-                </div>
-            </div>
-
-            <!-- 7. Maradona Argentina -->
-            <div class="product-card">
-                <div class="image-container">
-                    <span class="badge" style="background: #2b6cb0; color: #fff;">Collector's Piece</span>
-                    <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=600&q=80" alt="Maradona Argentina Away">
-                </div>
-                <div class="product-info">
-                    <div class="category">Legends & Retros</div>
-                    <h3 class="product-title">Maradona Argentina Away #10</h3>
-                    <div class="product-meta">
-                        <span class="price">599 EGP</span>
-                        <span class="sizes">Sizes: M / L</span>
-                    </div>
-                    <button class="secure-btn" onclick="openCheckout('Maradona Argentina Away #10', '599 EGP')">Secure Piece</button>
-                </div>
-            </div>
-
-            <!-- 8. Barca x Kobe -->
-            <div class="product-card">
-                <div class="image-container">
-                    <span class="badge" style="background: #553c9a; color: #fff;">Crossover</span>
-                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80" alt="Barca x Kobe Edition">
-                </div>
-                <div class="product-info">
-                    <div class="category">Modern Hype</div>
-                    <h3 class="product-title">FC Barcelona x Kobe Edition</h3>
-                    <div class="product-meta">
-                        <span class="price">550 EGP</span>
-                        <span class="sizes">Sizes: M / L</span>
-                    </div>
-                    <button class="secure-btn" onclick="openCheckout('FC Barcelona x Kobe Edition', '550 EGP')">Secure Piece</button>
-                </div>
-            </div>
-
-            <!-- 9. Man United Retro -->
-            <div class="product-card">
-                <div class="image-container">
-                    <span class="badge" style="background: #1a202c; color: #fff;">Streetwear Flex</span>
-                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=600&q=80" alt="Man United Black Retro Ronaldo">
-                </div>
-                <div class="product-info">
-                    <div class="category">Legends & Retros</div>
-                    <h3 class="product-title">Man United Black Retro (Ronaldo #7)</h3>
-                    <div class="product-meta">
-                        <span class="price">550 EGP</span>
-                        <span class="sizes">Sizes: M / L</span>
-                    </div>
-                    <button class="secure-btn" onclick="openCheckout('Man United Black Retro (Ronaldo #7)', '550 EGP')">Secure Piece</button>
-                </div>
-            </div>
-
-            <!-- 10. Spain Vintage -->
-            <div class="product-card">
-                <div class="image-container">
-                    <span class="badge" style="background: #e2e8f0; color: #000;">Minimalist</span>
-                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80" alt="Spain Vintage Off-White Gold">
-                </div>
-                <div class="product-info">
-                    <div class="category">Modern Hype</div>
-                    <h3 class="product-title">Spain Vintage Off-White/Gold</h3>
-                    <div class="product-meta">
-                        <span class="price">550 EGP</span>
-                        <span class="sizes">Sizes: M / L</span>
-                    </div>
-                    <button class="secure-btn" onclick="openCheckout('Spain Vintage Off-White/Gold', '550 EGP')">Secure Piece</button>
-                </div>
-            </div>
-
+        <div class="product-grid" id="productGrid">
+            <!-- Products populated dynamically by JS -->
         </div>
     </main>
 
-    <!-- Checkout Modal -->
-    <div class="modal-overlay" id="checkoutModal">
-        <div class="modal">
-            <button class="close-modal" onclick="closeCheckout()">&times;</button>
-            <h3>Secure Your Piece</h3>
-            <p id="modalItemTitle">Selected Kit</p>
+    <!-- Slide-out Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay" onclick="handleOverlayClick(event)">
+        <div class="cart-drawer">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-drawer" onclick="toggleCart(false)">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItemsList">
+                <div class="empty-cart-msg">Your cart is empty</div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotalPrice">0 EGP</span>
+                </div>
+                <button class="checkout-trigger-btn" onclick="openCheckoutScreen()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="modal-container" id="productModal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeProductModal()">&times;</button>
+            <div class="detail-content" id="productDetailContent">
+                <!-- Dynamically filled -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Checkout Form Screen -->
+    <div class="modal-container" id="checkoutModal">
+        <div class="modal-box" style="max-width: 600px;">
+            <button class="modal-close" onclick="closeCheckoutScreen()">&times;</button>
+            <h3 style="font-size: 1.3rem; font-weight: 800; text-transform: uppercase; margin-bottom: 6px;">Cash on Delivery Checkout</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px;">Please provide your exact delivery details across Egypt.</p>
             
-            <form id="codForm" onsubmit="submitOrder(event)">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" id="custName" required placeholder="e.g. Omar Mohamed">
+            <form id="detailedCheckoutForm" onsubmit="submitFinalOrder(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="chkName" required placeholder="e.g. Omar Mohamed">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number (Mobile)</label>
+                        <input type="tel" id="chkPhone" required placeholder="010XXXXXXXX">
+                    </div>
+                    <div class="form-group full">
+                        <label>Email Address</label>
+                        <input type="email" id="chkEmail" required placeholder="e.g. omar@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label>City / Governorate</label>
+                        <input type="text" id="chkCity" required placeholder="e.g. Cairo, Giza, Alex">
+                    </div>
+                    <div class="form-group">
+                        <label>Street Name</label>
+                        <input type="text" id="chkStreet" required placeholder="e.g. Mossad St. / Road 9">
+                    </div>
+                    <div class="form-group">
+                        <label>Building / House Number</label>
+                        <input type="text" id="chkHouse" required placeholder="e.g. Building 14, Apt 3">
+                    </div>
+                    <div class="form-group">
+                        <label>Nearest Landmark (Optional)</label>
+                        <input type="text" id="chkLandmark" placeholder="e.g. Behind Metro Market">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Phone Number (Mobile)</label>
-                    <input type="tel" id="custPhone" required placeholder="010XXXXXXXX">
-                </div>
-                <div class="form-group">
-                    <label>Select Size</label>
-                    <select id="custSize" required>
-                        <option value="">Choose Size</option>
-                        <option value="Medium">Medium (M)</option>
-                        <option value="Large">Large (L)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Delivery Address (City & Street)</label>
-                    <input type="text" id="custAddress" required placeholder="e.g. Maadi, Cairo">
-                </div>
-                <button type="submit" class="submit-order">Place Order (Cash on Delivery)</button>
+                <button type="submit" class="submit-cod-btn">Complete Order via WhatsApp</button>
             </form>
         </div>
     </div>
 
     <script>
-        let selectedProduct = "";
-        let selectedPrice = "";
+        // Database of 10 First Wave Items
+        const products = [
+            { id: 1, title: "Argentina Home (Messi #10)", category: "National / Legend", price: 550, badge: "Anchor Drop", image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=700&q=80", desc: "The iconic striped masterpiece engineered for peak comfort and timeless aesthetic appeal." },
+            { id: 2, title: "Al Ahly Special Checkered (Haier)", category: "Egyptian Giants", price: 550, badge: "Local King", image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=80", desc: "Red eagles edition featuring the modern checkered pattern and premium gold details." },
+            { id: 3, title: "Zamalek Special Dark Grey/Gold", category: "Egyptian Giants", price: 550, badge: "Luxury Edition", image: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=700&q=80", desc: "Sleek slate grey paired with elite gold crest accents for ultimate off-pitch styling." },
+            { id: 4, title: "Egypt National Kit (Salah #10)", category: "National Team", price: 550, badge: "National Pride", image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=700&q=80", desc: "Pharaohs home strip with intricate hieroglyphic patterns and supreme dry-fit finish." },
+            { id: 5, title: "Juventus Retro (Zidane #21 / Sony)", category: "Legends & Retros", price: 599, badge: "Retro Vault", image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=700&q=80", desc: "Legendary 90s nostalgia with original vintage Sony sponsor badge and classic collar." },
+            { id: 6, title: "Brazil Black & Gold (Ronaldo #9)", category: "Legends & Retros", price: 599, badge: "Hype Edition", image: "https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?auto=format&fit=crop&w=700&q=80", desc: "Streetwear hybrid black edition honoring O Fenômeno in absolute luxury." },
+            { id: 7, title: "Maradona Argentina Away #10", category: "Legends & Retros", price: 599, badge: "Collector's Piece", image: "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=700&q=80", desc: "A timeless dark blue masterpiece capturing the immortal spirit of Diego." },
+            { id: 8, title: "FC Barcelona x Kobe Edition", category: "Modern Hype", price: 550, badge: "Crossover", image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=700&q=80", desc: "Mamba mentality meets Camp Nou heritage in this limited crossover release." },
+            { id: 9, title: "Man United Black Retro (Ronaldo #7)", category: "Legends & Retros", price: 550, badge: "Streetwear Flex", image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=700&q=80", desc: "The iconic early 2000s black kit with gold trim. Pure terrace culture." },
+            { id: 10, title: "Spain Vintage Off-White/Gold", category: "Modern Hype", price: 550, badge: "Minimalist", image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=700&q=80", desc: "Clean off-white minimalist palette crafted for high-end fashion integration." }
+        ];
 
-        function openCheckout(productName, price) {
-            selectedProduct = productName;
-            selectedPrice = price;
-            document.getElementById('modalItemTitle').innerText = productName + " — " + price;
+        let cart = [];
+        let selectedSize = "Medium (M)";
+        let activeProduct = null;
+
+        // Render Product Cards
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = products.map(p => `
+                <div class="product-card" onclick="openProductModal(${p.id})">
+                    <div class="image-container">
+                        <span class="badge">${p.badge}</span>
+                        <img src="${p.image}" alt="${p.title}" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <div class="category">${p.category}</div>
+                        <h3 class="product-title">${p.title}</h3>
+                        <div class="product-footer">
+                            <span class="price">${p.price} EGP</span>
+                            <span class="view-details-link">View Piece &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Open Product Detail Modal
+        function openProductModal(id) {
+            activeProduct = products.find(p => p.id === id);
+            selectedSize = "Medium (M)"; // reset default
+            
+            const content = document.getElementById('productDetailContent');
+            content.innerHTML = `
+                <img src="${activeProduct.image}" alt="${activeProduct.title}" class="detail-img">
+                <div style="font-size: 0.75rem; color: var(--accent-gold); text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">${activeProduct.category}</div>
+                <h2 class="detail-title">${activeProduct.title}</h2>
+                <div class="detail-price">${activeProduct.price} EGP</div>
+                <p class="detail-desc">${activeProduct.desc}</p>
+                
+                <div style="margin-top: 10px;">
+                    <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">Select Size (M & L Only):</label>
+                    <div class="size-selector">
+                        <div class="size-btn selected" id="sizeM" onclick="selectSize('Medium (M)')">Medium (M)</div>
+                        <div class="size-btn" id="sizeL" onclick="selectSize('Large (L)')">Large (L)</div>
+                    </div>
+                </div>
+
+                <button class="add-to-cart-action" onclick="addToCart()">Add to Cart</button>
+            `;
+            document.getElementById('productModal').style.display = 'flex';
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+
+        function selectSize(size) {
+            selectedSize = size;
+            if(size === 'Medium (M)') {
+                document.getElementById('sizeM').classList.add('selected');
+                document.getElementById('sizeL').classList.remove('selected');
+            } else {
+                document.getElementById('sizeL').classList.add('selected');
+                document.getElementById('sizeM').classList.remove('selected');
+            }
+        }
+
+        // Cart Management
+        function addToCart() {
+            const cartItem = {
+                id: activeProduct.id + '-' + selectedSize,
+                title: activeProduct.title,
+                price: activeProduct.price,
+                size: selectedSize
+            };
+            
+            cart.push(cartItem);
+            updateCartUI();
+            closeProductModal();
+            toggleCart(true);
+        }
+
+        function removeFromCart(uniqueId) {
+            cart = cart.filter(item => item.id !== uniqueId);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            document.getElementById('cartBadge').innerText = cart.length;
+            const list = document.getElementById('cartItemsList');
+            
+            if(cart.length === 0) {
+                list.innerHTML = `<div class="empty-cart-msg">Your cart is empty</div>`;
+                document.getElementById('cartTotalPrice').innerText = `0 EGP`;
+                return;
+            }
+
+            let total = 0;
+            list.innerHTML = cart.map(item => {
+                total += item.price;
+                return `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <h4>${item.title}</h4>
+                            <p>Size: ${item.size}</p>
+                        </div>
+                        <div class="cart-item-right">
+                            <div class="cart-item-price">${item.price} EGP</div>
+                            <button class="remove-item" onclick="removeFromCart('${item.id}')">Remove</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('cartTotalPrice').innerText = total + ` EGP`;
+        }
+
+        function toggle(isOpen) {
+            // handled by toggleCart
+        }
+
+        function toggleCart(open) {
+            const overlay = document.getElementById('cartOverlay');
+            if(open) {
+                overlay.style.display = 'flex';
+                setTimeout(() => overlay.classList.add('active'), 10);
+            } else {
+                overlay.classList.remove('active');
+                setTimeout(() => overlay.style.display = 'none', 300);
+            }
+        }
+
+        function handleOverlayClick(e) {
+            if(e.target === document.getElementById('cartOverlay')) {
+                toggleCart(false);
+            }
+        }
+
+        // Checkout Flow
+        function openCheckoutScreen() {
+            if(cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+            toggleCart(false);
             document.getElementById('checkoutModal').style.display = 'flex';
         }
 
-        function closeCheckout() {
+        function closeCheckoutScreen() {
             document.getElementById('checkoutModal').style.display = 'none';
         }
 
-        function submitOrder(e) {
+        function submitFinalOrder(e) {
             e.preventDefault();
-            const name = document.getElementById('custName').value;
-            const phone = document.getElementById('custPhone').value;
-            const size = document.getElementById('custSize').value;
-            const address = document.getElementById('custAddress').value;
+            const name = document.getElementById('chkName').value;
+            const phone = document.getElementById('chkPhone').value;
+            const email = document.getElementById('chkEmail').value;
+            const city = document.getElementById('chkCity').value;
+            const street = document.getElementById('chkStreet').value;
+            const house = document.getElementById('chkHouse').value;
+            const landmark = document.getElementById('chkLandmark').value;
 
-            const message = `New Order - Rare Stock!\n\nItem: ${selectedProduct}\nPrice: ${selectedPrice}\nSize: ${size}\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\nPayment: Cash on Delivery`;
-            const encodedMessage = encodeURIComponent(message);
-            
-            const whatsappNumber = "201000000000"; 
-            
-            alert("Order placed successfully! Redirecting to confirmation...");
-            window.location.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            let orderSummary = cart.map(i => `• ${i.title} (${i.size}) - ${i.price} EGP`).join('\n');
+            let total = cart.reduce((sum, i) => sum + i.price, 0);
+
+            const message = `*NEW RARE STOCK ORDER* (COD)\n\n` +
+                `*Items:*\n${orderSummary}\n\n` +
+                `*Total:* ${total} EGP\n\n` +
+                `*Customer Details:*\n` +
+                `Name: ${name}\n` +
+                `Phone: ${phone}\n` +
+                `Email: ${email}\n\n` +
+                `*Delivery Address:*\n` +
+                `City: ${city}\n` +
+                `Street: ${street}\n` +
+                `House/Bldg: ${house}\n` +
+                `Landmark: ${landmark || 'None'}\n\n` +
+                `Payment: Cash on Delivery`;
+
+            const encoded = encodeURIComponent(message);
+            const whatsappNumber = "201000000000"; // Replace with your active business WhatsApp number
+
+            alert("Order validated successfully! Redirecting to WhatsApp to confirm your delivery...");
+            window.location.href = `https://wa.me/${whatsappNumber}?text=${encoded}`;
         }
+
+        // Initialize grid on load
+        renderProducts();
     </script>
 </body>
 </html>
